@@ -30,7 +30,7 @@ const DetailBlog = ({ match }) => {
               <img src={blog.images} alt={blog.title} />
             </div>
             <div className="content_detail">
-            <h6>{moment(blog.createdAt).fromNow()}</h6>
+              <h6>{moment(blog.createdAt).fromNow()}</h6>
               <h1>{blog.title}</h1>
               <p>{blog.description}</p>
             </div>

@@ -13,8 +13,10 @@ app.use(fileUpload());
 
 const blog = require("./routes/blogRoute");
 
+app.use("/contact", require("./routes/contactRoute"));
 app.use("/api", blog);
 
-app.use(errorMiddleware);
 
+app.use(errorMiddleware); 
+ 
 module.exports = app;

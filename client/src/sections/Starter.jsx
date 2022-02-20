@@ -4,12 +4,9 @@ import WorkImage from "../assets/work.svg";
 import Button from '../components/Button';
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
-import Navbar from '../components/Navbar';
-
 function Starter() {
   return (
     <div className='main-container'>
-      <Navbar />
       <div className='container'>
         <div className='content'>
         <h1>

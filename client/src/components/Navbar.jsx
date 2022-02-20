@@ -4,50 +4,76 @@ import BrandName from "./BrandName";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
 import "../styles/components/Navbar.scss";
+import "../styles/sections/Starter.scss";
+import { Link } from "react-router-dom";
+import { scroller } from "react-scroll";
 
 export default function Navbar() {
   const [toggleNavbar, setToggleNavbar] = useState(false);
   const navbarToggler = () => {
     setToggleNavbar(!toggleNavbar);
   };
+
+  const scrollToElement = (element) => {
+    scroller.scrollTo(element, {
+      duration: 500,
+      delay: 30,
+      smooth: true,
+      offset: -80,
+    });
+  };
+
   return (
-    <div
-      className={`navbar ${toggleNavbar === true ? "active" : ""}`}
-     
-    >
-      <div className="col">
-        <BrandName />
-        <div className="collapseble-button">
-          {!toggleNavbar ? (
-            <GiHamburgerMenu onClick={navbarToggler} />
-          ) : (
-            <MdClose onClick={navbarToggler} />
-          )}
+    <div className="main-container">
+      <div className={`navbar ${toggleNavbar === true ? "active" : ""}`}>
+        <div className="col">
+          <BrandName />
+          <div className="collapseble-button">
+            {!toggleNavbar ? (
+              <GiHamburgerMenu onClick={navbarToggler} />
+            ) : (
+              <MdClose onClick={navbarToggler} />
+            )}
+          </div>
         </div>
-      </div>
-      <nav>
-        <div className="links">
-          <ul>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#services">Services</a>
-            </li>
-
-            <li>
-              <a href="#testimonial">Testimonial</a>
-            </li>
-
-            <li>
-              <a href="#blog">Blog</a>
-            </li>
-            <li>
+        <nav>
+          <div className="links">
+            <ul>
+              <li onClick={() => scrollToElement("Starter")}>
+                <Link to="/" onClick={navbarToggler}>
+                  Home
+                </Link>
+              </li>
+              <li onClick={() => scrollToElement("About")}>
+                <Link to="#about" onClick={navbarToggler}>
+                  About
+                </Link>
+              </li>
+              <li onClick={() => scrollToElement("Blogs")}>
+                <Link to="#blogs" onClick={navbarToggler}>
+                  Blogs
+                </Link>
+              </li>
+              <li onClick={() => scrollToElement("Why")}>
+                <Link to="#why" onClick={navbarToggler}>
+                  Why
+                </Link>
+              </li>
+              <li onClick={() => scrollToElement("Testimonials")}>
+                <Link to="#testimonials" onClick={navbarToggler}>
+                  Testimonials
+                </Link>
+              </li>
+              <li>
+              <Link to="/contact" onClick={navbarToggler}>
               <Button content="Contact" />
-            </li>
-          </ul>
-        </div>
-      </nav>
+                </Link>
+              
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </div>
   );
 }
