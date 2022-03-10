@@ -28,11 +28,11 @@ function App() {
       <Element className="Why">
       <Route exact path="/" component={Why} />
       </Element>
-      <Element className="Testimonials">
-      <Route exact path="/" component={Testimonials} />
-      </Element>
       <Element className="Blogs">
       <Route exact path="/" component={Blogs} />
+      </Element>
+      <Element className="Testimonials">
+      <Route exact path="/" component={Testimonials} />
       </Element>
       <Route exact path="/blog/:id" component={DetailBlog} />
       <Route exact path="/contact" component={Contact} />

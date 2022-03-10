@@ -8,26 +8,24 @@ export default function Testimonials() {
     <div className="testimonials-container" id="testimonial">
       <div className="container">
         <div className="title-container">
-          <Title title="Testimonials" color="blue" />
-          <p>See what our clients are saying about us.</p>
+          <Title title="Journey" color="blue" />
+          <p>I am looking for a new challenge.</p>
         </div>
         <div className="testimonials">
           <Testimonial
-            content="The best on the net! Software development saved my business. I use
-        Software development often. I am really satisfied with my Software
-        Development."
-            name="Trushit Vyas"
-            designation="Co-Founder"
+            content="Junior Web Developer at Becode Intensive 7-month training focused on active pedagogy and independent work, followed by a 3-month internship at Diversibe Learning different web languages "
+            name="Becode"
+            designation="2021"
           />
           <Testimonial
-            content="Mobile application developer is exactly what out business has been lacing. I have gotten at least 50 times the value from mobile apllication."
-            name="Kishan H. Sheth"
-            designation="Founder & CEO"
+            content="Pre-training as a junior web developer at the local Schaerbeek mission for a period of 2 months"
+            name="Mission Locale Schaerbeek"
+            designation="2020"
           />
           <Testimonial
-            content="Logo Design is the next killer app. We've used logo design for the last five years. Best. Product. Ever! Definetly worth the investment"
-            name="Romit Gandhi"
-            designation="Founder"
+            content="I am now looking for new professional challenges. I like to evolve in a team and independently. Propose new ideas and solutions. I am available immediately to start work. "
+            name="Job seeking "
+            designation="2022"
           />
         </div>
       </div>

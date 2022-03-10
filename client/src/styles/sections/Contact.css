@@ -36,6 +36,13 @@ form {
   background: #ffffff;
   color: #000000;
 }
+form h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 18px;
+}
 form p {
   color: #000;
   font-size: 16px;

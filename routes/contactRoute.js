@@ -1,15 +1,15 @@
-const router = require("express").Router();
+/* const router = require("express").Router();
 const nodemailer = require("nodemailer");
 
 router.get("/", (req, res) => {
   res.send("contacted");
 });
 
-router.post("/", (req, res) => {
+router.post("/contact", (req, res) => {
   let data = req.body;
 
   let smtpTransport = nodemailer.createTransport({
-    service: 'Gmail',
+    service: 'gmail',
     port: 465,
     auth: {
       user: "thiernobarry554@gmail.com",
@@ -44,4 +44,4 @@ router.post("/", (req, res) => {
 });
 
 module.exports = router;
- 
+  */

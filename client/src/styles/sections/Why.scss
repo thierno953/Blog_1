@@ -58,8 +58,8 @@
       .video {
         height: 18rem;
         width: 100%;
-        background-image: url("../../assets/videoImage.jpg");
-        background-size: cover;
+        object-fit: cover;
+        justify-self: center;
         border-radius: 1rem;
         display: flex;
         justify-content: center;

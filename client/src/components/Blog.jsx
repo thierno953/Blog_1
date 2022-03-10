@@ -15,7 +15,6 @@ function Blog({blog}) {
           <h3>{blog.title}</h3>
         </div>
         <div className="subTitle">
-       {/*    <p>{blog.description}</p> */}
         </div>
         <Link to={`/blog/${blog._id}`}>
         <Button

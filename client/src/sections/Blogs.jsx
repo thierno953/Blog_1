@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import Blog from "../components/Blog";
-import Button from "../components/Button";
 import Title from "../components/Title";
 import "../styles/sections/Blogs.scss";
 import { useAlert } from "react-alert";
@@ -20,17 +19,17 @@ function Blogs() {
     }
 
     dispatch(getBlog());
-  }, [dispatch, error, alert]);
+  }, [dispatch, error, alert]); 
 
   return (
     <div className="blogs-container" id="blog">
       <div className="container">
         <div className="title-container">
           <Title title="Blogs" color="pink" />
-          <p>Insights and advice from our experts.</p>
+          <p>Talk about my character.</p>
         </div>
         <div className="blogs">
-          {loading ? (
+          {loading ? ( 
             <Loader />
           ) : (
             <>
@@ -38,10 +37,6 @@ function Blogs() {
                 blogs.map((blog) => <Blog key={blog._id} blog={blog} />)}
             </>
           )}
-        </div>
-
-        <div className="button-container">
-          <Button content="View All" />
         </div>
       </div>
     </div>

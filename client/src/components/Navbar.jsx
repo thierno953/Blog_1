@@ -45,23 +45,23 @@ export default function Navbar() {
                 </Link>
               </li>
               <li onClick={() => scrollToElement("About")}>
-                <Link to="#about" onClick={navbarToggler}>
+                <Link to="/" onClick={navbarToggler}>
                   About
                 </Link>
               </li>
+              <li onClick={() => scrollToElement("Why")}>
+                <Link to="/" onClick={navbarToggler}>
+                  Character 
+                </Link>
+              </li>
               <li onClick={() => scrollToElement("Blogs")}>
-                <Link to="#blogs" onClick={navbarToggler}>
+                <Link to="/" onClick={navbarToggler}>
                   Blogs
                 </Link>
               </li>
-              <li onClick={() => scrollToElement("Why")}>
-                <Link to="#why" onClick={navbarToggler}>
-                  Why
-                </Link>
-              </li>
               <li onClick={() => scrollToElement("Testimonials")}>
-                <Link to="#testimonials" onClick={navbarToggler}>
-                  Testimonials
+                <Link to="/" onClick={navbarToggler}>
+                Journey
                 </Link>
               </li>
               <li>

@@ -1,97 +1,101 @@
-import React from "react";
+import React, { useState } from "react";
 import BrandName from "../components/BrandName";
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { ImLocation } from "react-icons/im";
 import { AiOutlineSend } from "react-icons/ai";
 import "../styles/sections/Footer.scss";
+import axios from "axios";
 
 function Footer() {
+  const [to, setTo] = useState("");
+  const [msg, setMsg] = useState("");
+
+  const handleNameChange = (e) => {
+    setTo(e.target.value);
+    setMsg(msg)
+  };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    const user = { to };
+
+    axios
+      .post("/users", user)
+      .then((res) => {
+        setMsg(res.data.respMesg);
+
+        setTimeout(() => {
+          setMsg("");
+        }, 2000);
+
+        setTo("");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div className="footer-container">
       <div className="container">
         <div className="main-container">
-          <div
-            className="news-letter"
-           
-          >
+          <div className="news-letter">
             <BrandName isFooter={true} />
-            <p>
-              Join our newsletter to get updated with our Offers
-            </p>
-            <div className="mail">
-              <input type="email" placeholder="Please Enter Your Email" />
+            <p>Please Enter Your Email</p>
+            <form onSubmit={onSubmit} className="mail">
+              <input
+                type="email"
+                placeholder="Email"
+                name="to"
+                onChange={handleNameChange}
+                value={to}
+              />
               <button>
                 <AiOutlineSend />
               </button>
-            </div>
+            </form>
           </div>
-          <div
-            className="quick-links"
-          
-          >
-            <h3>Quick Links</h3>
+          <div className="quick-links">
+            <h3>Forntend</h3>
             <ul>
               <li>
-                <a href="#">About</a>
+                <a href="#">Html</a>
               </li>
               <li>
-                <a href="#">Testimonial</a>
+                <a href="#">Css</a>
               </li>
               <li>
-                <a href="#">Contact Us</a>
+                <a href="#">JavaScript</a>
               </li>
               <li>
-                <a href="#">Portfolio</a>
+                <a href="#">React</a>
               </li>
               <li>
-                <a href="#">Career</a>
+                <a href="#">Redux</a>
               </li>
               <li>
-                <a href="#">Blog</a>
-              </li>
-              <li>
-                <a href="#">Terms & Conditions</a>
-              </li>
-              <li>
-                <a href="#">Privacy Policy</a>
+                <a href="#">TypeScript</a>
               </li>
             </ul>
           </div>
-          <div
-            className="industries"
-          
-          >
-            <h3>Industires</h3>
+          <div className="industries">
+            <h3>Backend</h3>
             <ul>
               <li>
-                <a href="#">Website Development</a>
+                <a href="#">NodeJS</a>
               </li>
               <li>
-                <a href="#">Mobile App Development</a>
+                <a href="#">MongoDB</a>
               </li>
               <li>
-                <a href="#">Website Design</a>
+                <a href="#">MySql</a>
               </li>
-              <li>
-                <a href="#">Mobile App Design</a>
-              </li>
-              <li>
-                <a href="#">Digital Marketing</a>
-              </li>
-              <li>
-                <a href="#">Graphic Design</a>
-              </li>
-              <li>
-                <a href="#">IOS App Development</a>
-              </li>
+             
             </ul>
           </div>
-          <div
-            className="touch"
-         
-          >
+          <div className="touch">
             <h3>Get in Touch</h3>
             <div className="touch-section">
               <div className="icon">
@@ -100,7 +104,7 @@ function Footer() {
               <div className="detail">
                 <div className="detail-name">Email</div>
                 <div className="detail-content">
-                  <a href="#">kishansheth21@gmail.com</a>
+                  <a href="#">thiernobarry554@gmail.com</a>
                 </div>
               </div>
             </div>
@@ -111,7 +115,7 @@ function Footer() {
               <div className="detail">
                 <div className="detail-name">Phone</div>
                 <div className="detail-content">
-                  <a href="#">+000000000000</a>
+                  <a href="#">+32 466 240 103</a>
                 </div>
               </div>
             </div>
@@ -123,7 +127,7 @@ function Footer() {
               <div className="detail">
                 <div className="detail-name">Location</div>
                 <div className="detail-content">
-                  <a href="#"> 32 StreetOne Boards, GJ 560123</a>
+                  <a href="#"> Brussel (Woluwe Saint Pierre)</a>
                 </div>
               </div>
             </div>

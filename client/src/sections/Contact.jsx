@@ -4,42 +4,38 @@ import Image from "../assets/contact1.png";
 import axios from "axios";
 
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [banner, setBanner] = useState("");
+  const [to, setTo] = useState("");
+  const [subject, setSubject] = useState("");
+  const [description, setDescription] = useState("");
+  const [msg, setMsg] = useState("");
 
   const handleNameChange = (e) => {
-    setName(e.target.value);
+    setTo(e.target.value);
   };
   const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+    setSubject(e.target.value);
   };
   const handleMessageChange = (e) => {
-    setMessage(e.target.value);
+    setDescription(e.target.value);
   };
 
-  const formSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
-    let data = {
-      name: name,
-      email: email,
-      message: message,
-    };
+    const user = { to, subject, description };
 
     axios
-      .post(`/contact`, data)
+      .post("/users", user)
       .then((res) => {
-        setBanner(res.data.msg);
+        setMsg(res.data.respMesg);
 
         setTimeout(() => {
-          setBanner("");
-        }, 2000);
+          setMsg("");
+        }, 3000);
 
-        setName("");
-        setEmail("");
-        setMessage("");
+        setTo("");
+        setSubject("");
+        setDescription("");
       })
       .catch((err) => {
         console.log(err);
@@ -52,44 +48,45 @@ const Contact = () => {
         <div className="from_flex_contact">
           <div className="from_info">
             <img src={Image} alt="Images" />
-            <h2> Demande d'information</h2>
+            <h3>Information request</h3>
             <h3>
               Phone : <span>+32 466 240 103</span>
             </h3>
             <h3>
-              Email : <span>thiernobarry554@gmail.com</span>
+              Mail : <span>thiernobarry554@gmail.com</span>
             </h3>
             <h3>
-              Adresse : <span>Rue Sombre 79 (Woluwe Saint Pierre)</span>
+              Address  : <span>Brussel (Woluwe Saint Pierre)</span>
             </h3>
-            <p>texte lisible et contenant du sens est source de distractions</p>
           </div>
-          <form onSubmit={formSubmit}>
-            <p>{banner}</p>
+          <form onSubmit={onSubmit}>
+            <h1>Contact</h1>
+            <p>{msg}</p>
             <input
               type="text"
               placeholder="Name"
               required
-              name="name"
-              value={name}
-              onChange={handleNameChange}
+              name="subject"
+              onChange={handleEmailChange}
+              value={subject}
             />
             <input
-              type="email" 
+              type="email"
               placeholder="Email"
               required
-              name="email"
-              value={email}
-              onChange={handleEmailChange}
+              name="to"
+              onChange={handleNameChange}
+              value={to}
             />
             <textarea
               type="text"
-              name="message"
-              rows="6"
+              className="form-control form-control-lg"
               placeholder="Message"
-              value={message}
+              rows="6"
+              name="description"
               onChange={handleMessageChange}
-            ></textarea>
+              value={description}
+            />
             <button type="submit" className="btn_contact">
               Submit
             </button>

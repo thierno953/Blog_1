@@ -1,35 +1,41 @@
-import React from 'react';
+import React from "react";
 import "../styles/sections/Starter.scss";
 import WorkImage from "../assets/work.svg";
-import Button from '../components/Button';
+import Button from "../components/Button";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 function Starter() {
   return (
-    <div className='main-container'>
-      <div className='container'>
-        <div className='content'>
-        <h1>
-            We Provide Solutions to Help You to Build or Grow Your Buisness!
+    <div className="main-container">
+      <div className="container">
+        <div className="content">
+          <h1>
+            WELCOME IN MY BLOG 
           </h1>
           <p>
-            A professional web and mobile app development agency with over 100+
-            web and app developed. We provide a high- quality service in web and
-            mobile app development as well as in design.
+            This blog was created to share my experiences in the world of
+            technology and my experience as a junior web developer. Learn best
+            practices and develop my skills. Basically, you will find
+            information about my extensive skills needed as a web developer. I
+            try, as far as possible, to bring something concrete from my daily
+            life.
           </p>
-          <div className='button-container'>
+          <div className="button-container">
+            <Link to="/contact">
             <Button
-              content="Request Quote"
+              content="Contact"
               icon={<HiOutlineArrowNarrowRight />}
             />
+            </Link>
           </div>
         </div>
-        <div className='image'>
-        <img src={WorkImage} alt="WorkImage" />
+        <div className="image">
+          <img src={WorkImage} alt="WorkImage" />
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Starter
+export default Starter;

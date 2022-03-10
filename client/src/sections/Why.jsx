@@ -1,37 +1,39 @@
 import React from "react";
 import Title from "../components/Title";
-import { GoPlay } from "react-icons/go";
 import "../styles/sections/Why.scss";
+import spaceVideo from "../assets/space.mp4";
 
 function Why() {
   return (
     <div className="why-container" id="services">
       <div className="container">
         <div className="top">
-          <Title title="Why THB ?" color="pink" />
+          <Title title="Character" color="pink" />
           <div className="subTitle">
             <p>
-              Always stay updated with the technologies thus we help our clients
-              by giving the best solutions for thier needs.
+              Always stay up to date with technologies thus helping customers by
+              giving them the best solutions for their needs.
             </p>
           </div>
         </div>
         <div className="content">
           <div>
-            <div className="video">
-              <GoPlay />
-            </div>
+            <video autoPlay loop muted id="video" className="video">
+              <source src={spaceVideo} type="video/mp4" />
+            </video>
           </div>
           <div className="reasons">
             <ul>
-              <li>Over 10+ years of industry wide expierence</li>
+              <li>I am a very rigorous and independent person.</li>
               <li>
-                Provide solutions to our multiple global clients or website
-                traffic generation and workflow
+                I have a great ability to listen (especially to understand
+                customer needs)
               </li>
-              <li>Strong team of 150+ creative people</li>
-              <li>99% adhere to service level contract</li>
-              <li>Ready to recieve service request 24/7</li>
+              <li>
+                I adapt quickly to changes in my environment and be responsive
+              </li>
+              <li>I work without counting overtime </li>
+              <li> like working in a team and independently too.</li>
             </ul>
           </div>
         </div>

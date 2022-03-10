@@ -1,58 +1,46 @@
 import React from "react";
-import Button from "../components/Button";
 import Card from "../components/Card";
 import Title from "../components/Title";
-import { HiLightBulb } from "react-icons/hi";
-import { BsFillCalendarFill } from "react-icons/bs";
-import { BiSupport } from "react-icons/bi";
-import { SiGooglemessages } from "react-icons/si";
+import { GoCode } from "react-icons/go";
+import { BiHeadphone } from "react-icons/bi";
+import { BiVolumeFull } from "react-icons/bi";
+import { BiCalendar } from "react-icons/bi";
 
 import "../styles/sections/About.scss";
 
-
 function About() {
- 
-
   return (
     <div className="about-container" id="about">
       <div className="container">
-        <div
-          className="details"
-         
-        >
-          <Title title="About THB" color="blue" />
+        <div className="details">
+          <Title title="PERSONAL STYLE" color="blue" />
           <p>
-            We Believe that everyone deserves to have a website or online store.
-            Innovation and simplicity make us happy. Our mission is to help
-            people achieve what they have passionate about it.
+            Producing quality work is a priority for me. Thorough, precise and
+            structured, strives to avoid errors in my work. My diligent attitude
+            is the result of the importance I place on the point of view of
+            others. I listen to ideas, suggestions and comments. It is therefore
+            easy to work with me, to give space to others, to lend my support
+            when needed and to complete tasks with thoroughness. In my
+            relationships with others, I am humble and I do not impose my
+            authority.
           </p>
           <p>
-            We are excited to simplify SEO for everyone through software,
-            education, or cimmunity.
+          I go straight to the point, avoid exaggerating. I adapt
+            my speech to my audience, and is warm. In my style of work I
+            structure my work, I plan and follow the procedures. I tackle one
+            task at a time to avoid losing my concentration at work. I am
+            meticulous, check my work and make few mistakes. In my emotional
+            management I ensure that my decisions are reliable by evaluating the
+            results. I am responsive, very energetic and have a sense of
+            urgency. I radiate enthusiasm and see the bright side of things.
           </p>
-          <Button content="Why cryo?" />
+          
         </div>
         <div className="cards">
-          <Card
-            title="Innovative Ideas"
-            logo={<HiLightBulb />}
-      
-          />
-          <Card
-            title="Planning"
-            logo={<BsFillCalendarFill />}
-         
-          />
-          <Card
-            title="Communication"
-            logo={<BiSupport />}
-           
-          />
-          <Card
-            title="24 * 7 Support"
-            logo={<SiGooglemessages />}
-          
-          />
+          <Card title="Web Developer" logo={<GoCode />} />
+          <Card title="Music" logo={<BiHeadphone />} />
+          <Card title="Social" logo={<BiVolumeFull />} />
+          <Card title="Calendar" logo={<BiCalendar />} />
         </div>
       </div>
     </div>
